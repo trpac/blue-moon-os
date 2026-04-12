@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-zinc-950 text-zinc-100 selection:bg-zinc-100 selection:text-black;
+    /* This makes your text selection look like a high-end terminal */
+  }
+
+  /* Custom scrollbar for a cleaner look */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-800 rounded-full;
+  }
+}
+/* Hide anything with the 'focus-hide' class when monk-mode is active */
+.monk-mode-active .focus-hide {
+  opacity: 0;
+  pointer-events: none;
+  filter: blur(10px);
+  transition: all 1s ease-in-out;
+}
